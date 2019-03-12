@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">QuestionHomework</string>
+    <string name="QuestionString">Question:</string>
 </resources>
