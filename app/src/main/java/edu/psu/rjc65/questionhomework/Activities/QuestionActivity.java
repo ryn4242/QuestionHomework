@@ -4,7 +4,9 @@ import android.renderscript.ScriptGroup;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -22,6 +24,7 @@ public class QuestionActivity extends AppCompatActivity {
     private TextView questionTextView;
     private RadioButton a1, a2, a3, a4;
     private ArrayList <Question> questionArrayList = new ArrayList<Question>();
+    private RadioGroup answerGroup;
     private int count = 0;
 
     @Override
@@ -30,6 +33,8 @@ public class QuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_question);
 
         String questionNumber = "Question One";
+
+        answerGroup = findViewById(R.id.answerGroupID);
 
         /*try {
             theQuestion = findQuestion(questionNumber);
@@ -91,6 +96,11 @@ public class QuestionActivity extends AppCompatActivity {
         a2.setText(questionArrayList.get(0).getAnswerTwo());
         a3.setText(questionArrayList.get(0).getAnswerThree());
         a4.setText(questionArrayList.get(0).getAnswerFour());
+    }
+
+    public void nextButton(View view){
+        int selectedID = answerGroup.getCheckedRadioButtonId();
+
     }
 
     public String findQuestion(String question) throws IOException{
